@@ -1,0 +1,17 @@
+# "org" ensures this Service is used with the correct Serverless Framework Access Key.
+org: murali10
+# "app" enables Serverless Framework Dashboard features and sharing them with other Services.
+app: serverless-lambda
+# "service" is the name of this project. This will also be added to your AWS resource names.
+service: Express-Lambda
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: ap-south-1
+
+functions:
+  api:
+    handler: handler.handler
+    events:
+      - httpApi: "*"
